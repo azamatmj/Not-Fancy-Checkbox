@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;}
+
+body {
+  font-family: 'Hi Melody', cursive;
+  font-size: 150%}
+
+a {
+  text-decoration: none;
+  display: inline-block}
+
+.container {
+  max-width: 28.125rem;
+  margin: 0 auto;
+  background: #dd0;
+  padding: 2rem 5rem .6rem;}
+
+h1 {
+  padding: 0.4rem;
+  background: #333;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  font-weight: 500;}
+
+.input-control {
+  margin-bottom: 1.25rem;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;}
+
+input[type=checkbox] {
+  visibility: hidden;
+  margin-right: 5px;
+  position:relative;}
+
+input[type=checkbox]::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: -1.3px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  visibility: visible;}
+
+.fab, .far {
+  vertical-align: middle;
+  width: 1rem;
+  font-size: 1rem;}
+
+.check-icon {
+  position: absolute;
+  left: 1.1%;
+  font-size: 7.8px;  
+  z-index: 100;
+  color: #fff;
+  display: none;}
+
+label {
+  position:relative;
+  margin-left: 4px;
+  color: #333;}
+
+label::before {
+  content: "";
+  width: 0;
+  height: 14px;
+  background: rgb(80, 140, 0);
+  opacity: 0;
+  position: absolute;
+  top: 23%;
+  transform: skewX(-10deg);
+  transition: width .25s ease-in-out, opacity .5s ease-in-out;}
+
+/* Button */
+.btn-wrap {text-align: center}
+#button {
+  padding: .6rem 1rem;
+  text-transform: uppercase;
+  font-family: 'Hi Melody', cursive;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  outline: 0;
+  transition: all .25s}
+#button:active {border-color: #755;}
+
+input[type=checkbox]:active::before {
+  background: rgba(80, 140, 0, 0.4);}
+
+/* Footer icons */
+.social-l-box {
+  text-align: center;
+  white-space: nowrap;
+  font-size: .87rem;
+  margin-top: 2rem;} 
+.social-l-box label {
+  color: #755; 
+  margin: 0 .4rem;
+  cursor: pointer;}
+.social-l-box .fab {
+  font-size: inherit;
+  width:auto;}
+
+/* CHECKED FUNCs */
+input[type=checkbox]:checked::before {
+  background: rgb(80, 140, 0);
+  border-color: rgba(150, 180, 0);}
+
+input[type=checkbox]:checked ~ label::before {
+  width: 100%;
+  opacity: 0.4;
+  transition: width .35s ease-in-out, opacity .25s ease-in-out;}
+
+input[type=checkbox]:checked + .check-icon {display: inline;}
